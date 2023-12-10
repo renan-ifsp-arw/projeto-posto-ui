@@ -9,10 +9,12 @@ import { AppComponent } from './app.component';
 import { ClientesModule } from './clientes/clientes.module';
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
+import { BombaModule } from './bomba/bomba.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
