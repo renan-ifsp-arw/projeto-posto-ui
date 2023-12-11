@@ -9,26 +9,26 @@
 
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Preco</label>
-        <input pInputText name="preco" type="number"
+        <input pInputText name="preco" type="number" [(ngModel)]="bomba.preco"
          required minlength="3" maxlength="50">
       </div>
 
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Quantidade</label>
-        <input pInputText name="quantidade" type="number"
+        <input pInputText name="quantidade" type="number" [(ngModel)]="bomba.quantidade"
          required>
       </div>
 
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Capadade</label>
-        <input pInputText name="capacidade" type="number"
+        <input pInputText name="capacidade" type="number" [(ngModel)]="bomba.capacidade"
          required>
       </div>
 
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Combustivel</label>
-         <p-dropdown name="combustivel" [options]="types"placeholder="Selecione" required>
-      </p-dropdown>
+         <p-dropdown name="combustivel" [options]="types"placeholder="Selecione" required  [(ngModel)]="bomba.combustivel">
+        </p-dropdown>
       </div>
 
       <div class="p-col-12">
