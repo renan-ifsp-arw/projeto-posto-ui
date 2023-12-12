@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { DropdownModule } from 'primeng/dropdown';
 import { BombaListComponent } from './bomba-list/bomba-list.component';
 import { BombaRegisterComponent } from './bomba-register/bomba-register.component';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 
 
@@ -23,7 +24,8 @@ import { BombaRegisterComponent } from './bomba-register/bomba-register.componen
     InputTextModule,
     ButtonModule,
     RouterModule,
-    DropdownModule
+    DropdownModule,
+    CurrencyMaskModule
   ],
   exports:[
     BombaRegisterComponent

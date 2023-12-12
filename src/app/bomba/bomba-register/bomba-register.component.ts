@@ -7,7 +7,6 @@ import { AuthService } from 'src/app/security/auth.service';
 import { ErrorHandlerService } from './../../core/error-handler.service';
 
 
-
 @Component({
   selector: 'app-bomba-register',
   templateUrl: './bomba-register.component.html',
@@ -17,37 +16,31 @@ import { ErrorHandlerService } from './../../core/error-handler.service';
 export class BombaRegisterComponent {
   
   types = [
-    { label: 'Gasolina Comum', value: 'GASOLINA COMUM' },
-    { label: 'Gasolina Aditivada', value: 'GASOLINA ADITIVADA' },
-    { label: 'Gasolina Premium', value: ' GASOLINA PREMIUM'},
-    { label: 'Etanol', value: 'ETANOL'},
-    { label: 'Disiel', value: 'DISIEL'},
-    { label: 'Gnv', value: 'GNV' }
+    { label: 'GASOLINA_COMUM', value: 'GASOLINA_COMUM' },
+    { label: 'GASOLINA_ADITIVADA', value: 'GASOLINA_ADITIVADA' },
+    { label: 'GASOLINA_PREMIUM', value: 'GASOLINA_PREMIUM'},
+    { label: 'ETANOL', value: 'ETANOL'},
+    { label: 'DIESEL', value: 'DIESEL'},
+    { label: 'GNV', value: 'GNV' }
   ];
 
   bomba = new Bomba();
 
   constructor(
-    private bombaService:BombaService,        
+    private bombaService: BombaService,        
     private messageService: MessageService,
     private auth: AuthService,
-    private errorHandler: ErrorHandlerService,
-    ){}
+    private errorHandler: ErrorHandlerService
+  ){}
   
-  // save(bombaForm: NgForm){
-  //     this.addBomba(bombaForm);
-  //   }
-
-  // addBomba(bombaForm: NgForm) {
-  //   this.BombaService.add(this.bomba)
-  //     .then((addedActivity) => {
-  //       this.messageService.add({ severity: 'success', detail: 'Atividade adicionada com sucesso!' });
-  //       this.loadActivity(addedActivity.id);
-  //       this.router.navigate(['/activities', addedActivity.id]);
-  //     })
-  //     .catch(error => this.errorHandler.handle(error));
-  // }
-  
+  addBomba() {
+    this.bombaService.criarBomba(this.bomba).subscribe(
+      (resposta: any) => {
+        console.log('Bomba cadastrada com sucesso!', resposta);
+      },
+      (erro: any) => {
+        console.error('Erro ao cadastrar bomba:', erro);
+      }
+    );
   }
-
-
+}

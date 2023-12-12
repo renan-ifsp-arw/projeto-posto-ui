@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Bomba, User } from './../core/model';
 import { AuthService } from '../security/auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,13 @@ export class BombaService {
     private auth: AuthService
     ) { }
 
-  add(bomba: Bomba): Promise<Bomba> {
-    const headers = new HttpHeaders()
-      .append('Content-Type', 'application/json');
+  
 
-    return this.http.post<any>(this.bombaUrl, bomba, { headers })
-      .toPromise();
+  
+
+  criarBomba(bomba: Bomba): Observable<Bomba> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+    return this.http.post<Bomba>(this.bombaUrl, bomba, { headers });
   }
-
 }
