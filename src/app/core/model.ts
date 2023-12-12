@@ -31,7 +31,7 @@ export class Cliente {
 export class Funcionario {
   id!: number;
   nome!: string;
-  documento!: string;
+  cpf!: string;
   cargo!: string;
 }
 
@@ -39,6 +39,6 @@ export class Bomba {
   id!: number;
   combustivel!: string;
   preco!: number;
-  quantidade!: number;
+  quantidadeAtual!: number;
   capacidade!: number;
 }
