@@ -9,6 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { BombaListComponent } from './bomba-list/bomba-list.component';
 import { BombaRegisterComponent } from './bomba-register/bomba-register.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { TableModule } from 'primeng/table';
 
 
 
@@ -25,7 +26,8 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     ButtonModule,
     RouterModule,
     DropdownModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    TableModule 
   ],
   exports:[
     BombaRegisterComponent

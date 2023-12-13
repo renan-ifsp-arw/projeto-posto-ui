@@ -7,12 +7,14 @@ import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { DropdownModule } from 'primeng/dropdown';
 import { FuncionarioRegisterComponent } from './funcionario-register/funcionario-register.component';
-
+import { FuncionarioListComponent } from './funcionario-list/funcionario-list.component';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
   declarations: [
-    FuncionarioRegisterComponent
+    FuncionarioRegisterComponent,
+    FuncionarioListComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { FuncionarioRegisterComponent } from './funcionario-register/funcionario
     InputTextModule,
     ButtonModule,
     RouterModule,
-    DropdownModule 
+    DropdownModule,
+    TableModule 
   ],
   exports:[
     FuncionarioRegisterComponent
