@@ -25,7 +25,7 @@ export class LoginFormComponent {
   login(user: string, password: string) {
     this.auth.login(user, password)
     .then(() => {
-      this.router.navigate(['/clientes']);
+      this.router.navigate(['/cliente']);
     })
     .catch(() => {
       this.msg = 'Usuário e/ou senha inválida!';

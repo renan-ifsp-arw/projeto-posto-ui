@@ -15,15 +15,12 @@ import { UserService } from '../user.service';
 export class UserRegisterComponent {
   user = new User();
 
-
-
   constructor(
     private userService: UserService,
     private errorHandler: ErrorHandlerService,
     private messageService: MessageService,
     private router: Router,
     private title: Title
-
   ){}
 
   ngOnInit(): void {
@@ -38,5 +35,4 @@ export class UserRegisterComponent {
       })
       .catch(error => this.errorHandler.handle(error));
   }
-
 }

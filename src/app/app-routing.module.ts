@@ -16,21 +16,22 @@ const routes: Routes = [
 
   //{ path: '', redirectTo: '', pathMatch: 'full' },
   {
-    path: 'clientes/:id',
+    path: 'cliente/:id',
     component: ClienteRegisterComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_REGISTER_ACTIVITY']}
-  },
-  { path: 'clientes',
-    component: ClientesListComponent,
-    canActivate: [AuthGuard],
-    data: { roles: ['ROLE_SEARCH_ACTIVITY']}
+    data: {roles: ['ROLE_ABASTECIMENTO', 'ROLE_CONVENIENCIA', 'ROLE_GERENCIA']}
   },
   {
-    path: 'clientes/new',
+    path: 'cliente',
+    component: ClientesListComponent,
+    canActivate: [AuthGuard],
+    data: {roles: ['ROLE_ABASTECIMENTO', 'ROLE_CONVENIENCIA', 'ROLE_GERENCIA']}
+  },
+  {
+    path: 'cliente/new',
     component: ClienteRegisterComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_REGISTER_ACTIVITY']}
+    data: {roles: ['ROLE_ABASTECIMENTO', 'ROLE_CONVENIENCIA', 'ROLE_GERENCIA']}
   },
   {
      path: 'users/new',
@@ -52,4 +53,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

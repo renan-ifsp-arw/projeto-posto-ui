@@ -3,7 +3,7 @@ import { CommonModule , DatePipe, registerLocaleData} from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 
 import { AuthService } from '../security/auth.service';
-import { ClienteService } from '../clientes/cliente.service';
+import { ClienteService } from '../cliente/cliente.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorHandlerService } from './error-handler.service';
 import { ToastModule} from 'primeng/toast';
@@ -35,7 +35,7 @@ registerLocaleData(localePt);
   ],
   providers: [
     AuthService,
-  // ClienteService,
+    ClienteService,
     ErrorHandlerService,
     MessageService,
     ConfirmationService,

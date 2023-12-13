@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientesListComponent } from './clientes-list/clientes-list.component';
+import { ClientesListComponent } from './cliente-list/clientes-list.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,8 +14,6 @@ import { TableModule } from 'primeng/table';
 import { ClienteRegisterComponent } from './cliente-register/cliente-register.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-
-
 
 @NgModule({
   declarations: [
