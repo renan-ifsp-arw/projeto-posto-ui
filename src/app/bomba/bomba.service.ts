@@ -9,19 +9,21 @@ import { Observable } from 'rxjs';
 })
 export class BombaService {
   bombaUrl = 'http://localhost:8080/bomba';
+ 
   
   constructor(
     private http: HttpClient,
     private auth: AuthService
     ) { }
 
-  
-
-  
-
   criarBomba(bomba: Bomba): Observable<Bomba> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     return this.http.post<Bomba>(this.bombaUrl, bomba, { headers });
+  }
+
+  
+  listBombas(): Observable<Bomba[]> {
+    return this.http.get<Bomba[]>(this.bombaUrl);
   }
 }
