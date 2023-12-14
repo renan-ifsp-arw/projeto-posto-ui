@@ -11,8 +11,6 @@ import { BombaRegisterComponent } from './bomba-register/bomba-register.componen
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { TableModule } from 'primeng/table';
 
-
-
 @NgModule({
   declarations: [
     BombaListComponent,

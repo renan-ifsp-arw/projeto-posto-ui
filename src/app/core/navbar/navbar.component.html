@@ -10,8 +10,11 @@
   </div>
 
   <ul class="navbar-menu" [hidden]="!displayingMenu">
-    <li class="navbar-menuitem" routerLinkActive="active" *ngIf="auth.hasPermission('ROLE_GERENCIA')">
-      <a routerLink="/clientes"><i class="pi pi-users"></i> Clientes</a>
+    <li class="navbar-menuitem">
+      <!--routerLinkActive="active"-->
+      <!--*ngIf="auth.hasPermission('ROLE_GERENCIA')"-->
+
+      <a routerLink="/cliente"><i class="pi pi-users"></i> Clientes</a>
     </li>
     <li class="navbar-menuitem">
       <a routerLink="/users/new"><i class="pi pi-user"></i> Users</a>
