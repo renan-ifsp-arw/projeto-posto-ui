@@ -25,7 +25,7 @@ import { TableModule } from 'primeng/table';
     RouterModule,
     DropdownModule,
     CurrencyMaskModule,
-    TableModule 
+    TableModule
   ],
   exports:[
     BombaRegisterComponent
