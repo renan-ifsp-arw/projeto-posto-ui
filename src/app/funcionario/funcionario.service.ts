@@ -22,4 +22,12 @@ export class FuncionarioService {
 
     return this.http.post<Funcionario>(this.bombaUrl, funcionario, { headers });
   }
+  listFuncionario(): Promise<any> {
+    return this.http.get(`${this.bombaUrl}`)
+    .toPromise()
+     .then(response => {
+              console.log("response ", response)
+              return response;
+            });
+  }
 }
