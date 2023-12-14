@@ -52,8 +52,10 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'funcionario', component: FuncionarioListComponent },
   { path: 'funcionario/new', component: FuncionarioRegisterComponent },
+  { path: 'funcionario/:id', component: FuncionarioRegisterComponent},
   { path: 'bomba', component: BombaListComponent },
   { path: 'bomba/new', component: BombaRegisterComponent },
+  { path: 'bomba/:id', component: BombaRegisterComponent },
 
   { path: 'abastecimento', component: AbastecimentoListComponent },
   { path: 'abastecimento/new', component: AbastecimentoRegisterComponent },
