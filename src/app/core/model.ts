@@ -15,15 +15,11 @@ export class Cliente {
   nome!: string;
   documento!: string;
 
-
-
   static toJson(cliente: Cliente): any {
     return {
       id: cliente.id,
       nome: cliente.nome,
       documento:cliente.documento,
-
-
     }
   }
 }
@@ -42,3 +38,13 @@ export class Bomba {
   quantidadeAtual!: number;
   capacidade!: number;
 }
+
+export class Abastecimento {
+  id?: number;
+  preco?: number;
+  dataVenda?: Date = new Date();
+  quantidade?: number;
+  bombaId?: number;
+  clienteId?: number;
+}
+

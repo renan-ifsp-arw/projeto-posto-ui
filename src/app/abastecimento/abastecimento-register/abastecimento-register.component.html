@@ -1,1 +1,43 @@
-<p>abastecimento-register works!</p>
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="addAbastecimento()">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Cadastro de Abastecimento</h1>
+      </div>
+
+      <!-- Preço -->
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Preço</label>
+        <input pInputText name="preco" type="text" [(ngModel)]="abastecimento.preco" #preco="ngModel" required
+        required currencyMask [options]="{prefix: '', thousands: '.' , decimal:',' , allowNegative: false}">
+      </div>
+
+      <!-- Quantidade -->
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Quantidade</label>
+        <input pInputText name="quantidade" type="text" [(ngModel)]="abastecimento.quantidade" #quantidade="ngModel" required
+        required currencyMask [options]="{prefix: '', thousands: '.' , decimal:',' , allowNegative: false}">
+      </div>
+
+      <!-- Bomba ID -->
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Selecionar Bomba</label>
+        <p-dropdown name="bomba" [options]="bombas" [(ngModel)]="abastecimento.bombaId" placeholder="Select Bomba" required></p-dropdown>
+        <!-- Consider adding an app-message component for validation messages if needed -->
+      </div>
+
+      <!-- Cliente ID -->
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Selecionar Cliente</label>
+        <p-dropdown name="cliente" [options]="clientes" [(ngModel)]="abastecimento.clienteId" placeholder="Select Cliente" required></p-dropdown>
+        <!-- Consider adding an app-message component for validation messages if needed -->
+      </div>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
