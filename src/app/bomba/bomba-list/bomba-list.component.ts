@@ -35,7 +35,7 @@ export class BombaListComponent {
     this.bombaService.listBombas().subscribe(
       (result: Bomba[]) => {
         console.log(result)
-        this.bombas = result;
+        this.bombas = result.sort((a, b) => b.id - a.id);
         console.log("bombas",this.bombas)
       },
       (error: any) => {
@@ -45,6 +45,24 @@ export class BombaListComponent {
     );
   }
 
+  confirmRemoval(bomba: Bomba): void {
+    this.confirmation.confirm({
+      message: 'Tem certeza que deseja excluir?',
+      accept: () => {
+        this.remove(bomba);
+      }
+    });
+  }
+
+  remove(bomba: Bomba): void {
+    this.bombaService.remove(bomba.id)
+    .then(() => {
+      this.messageService.add({ severity: 'success', detail: 'Bomba excluída com sucesso!' });
+    })
+    .catch(error => this.errorHandler.handle(error));
+  }
+
+
   calculateFillPercentage(bomba: Bomba): number {
     if (bomba.capacidade && bomba.quantidadeAtual) {
       return Math.ceil(bomba.quantidadeAtual / bomba.capacidade * 100);
@@ -52,3 +70,4 @@ export class BombaListComponent {
     return 0;
   }
 }
+

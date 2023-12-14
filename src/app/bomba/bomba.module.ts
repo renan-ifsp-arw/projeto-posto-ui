@@ -10,6 +10,7 @@ import { BombaListComponent } from './bomba-list/bomba-list.component';
 import { BombaRegisterComponent } from './bomba-register/bomba-register.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { TableModule } from 'primeng/table';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TableModule } from 'primeng/table';
     RouterModule,
     DropdownModule,
     CurrencyMaskModule,
-    TableModule
+    TableModule,
+    TooltipModule
   ],
   exports:[
     BombaRegisterComponent
