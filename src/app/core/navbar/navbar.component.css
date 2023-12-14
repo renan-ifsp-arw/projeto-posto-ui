@@ -1,3 +1,6 @@
+@import "~primeicons/primeicons.css";
+
+
 .navbar {
   padding: 20px 0 10px;
   background-color: #1e94d2;
@@ -56,4 +59,11 @@
 }
 .navbar-menuitem.active {
    background-color: #494541;
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px
 }

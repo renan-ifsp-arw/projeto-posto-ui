@@ -4,25 +4,38 @@
     <div class="p-grid">
       <div class="p-col-12">
         <a href="javascript:;" class="navbar-toggle" (click)="displayingMenu = !displayingMenu">
-	  <i class="pi pi-bars"></i></a>
+          <i class="pi pi-bars"></i></a>
       </div>
     </div>
   </div>
 
   <ul class="navbar-menu" [hidden]="!displayingMenu">
-    <li class="navbar-user">{{ auth.jwtPayload?.name }}</li>
-    <li class="navbar-menuitem" routerLinkActive="active" *ngIf="auth.hasPermission('ROLE_SEARCH_ACTIVITY')">
-      <a routerLink="/clientes">clientes</a>
+    <li class="navbar-menuitem" routerLinkActive="active" *ngIf="auth.hasPermission('ROLE_GERENCIA')">
+      <a routerLink="/clientes"><i class="pi pi-users"></i> Clientes</a>
     </li>
-    <li class="navbar-menuitem"><a routerLink="/users/new">Users</a></li>
-    <li class="navbar-menuitem"><a href="javascript:;" (click)="logout()">Logout</a></li>
-
-    <li class="navbar-menuitem"><a routerLink="funcionario">Funcionario</a></li>
-
-    <li class="navbar-menuitem"><a routerLink="bomba">Bomba</a></li>
+    <li class="navbar-menuitem">
+      <a routerLink="/users/new"><i class="pi pi-user"></i> Users</a>
+    </li>
+    <li class="navbar-menuitem">
+      <a routerLink="funcionario"><i class="pi pi-briefcase"></i> Funcionario</a>
+    </li>
+    <li class="navbar-menuitem">
+      <a routerLink="bomba"><i class="pi pi-cog"></i> Bomba</a>
+    </li>
+    <li class="navbar-menuitem">
+      <a routerLink="abastecimento"><i class="pi pi-inbox"></i> Abastecimento</a>
+    </li>
+    <li class="navbar-menuitem">
+      <a routerLink="venda-conveniencia"><i class="pi pi-shopping-cart"></i> Venda Conveniência</a>
+    </li>
+    <li class="navbar-menuitem">
+      <a routerLink="ordem-compra"><i class="pi pi-list"></i> Ordem de Compra</a>
+    </li>
+    <li class="navbar-menuitem">
+      <a href="javascript:;" (click)="logout()">
+        <i class="pi pi-sign-out"></i> Logout</a>
+    </li>
 
   </ul>
-  
+
 </nav>
-
-
