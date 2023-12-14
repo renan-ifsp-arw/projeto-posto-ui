@@ -32,10 +32,26 @@ export class FuncionarioListComponent {
     list(): void {
       this.funcionarioService.listFuncionario()
         .then(result => {
-          this.funcionarios = result;
-          console.log("Funcionarios: ",this.funcionarios)
+          this.funcionarios =  result;
         })
         .catch(error => this.errorHandler.handle(error));
+    }
+
+    confirmRemoval(funcionario: Funcionario): void {
+      this.confirmation.confirm({
+        message: 'Tem certeza que deseja excluir?',
+        accept: () => {
+          this.remove(funcionario);
+        }
+      });
+    }
+  
+    remove(funcionario: Funcionario): void {
+      this.funcionarioService.remove(funcionario.id)
+      .then(() => {
+        this.messageService.add({ severity: 'success', detail: 'Funcionario excluída com sucesso!' });
+      })
+      .catch(error => this.errorHandler.handle(error));
     }
   
 }
