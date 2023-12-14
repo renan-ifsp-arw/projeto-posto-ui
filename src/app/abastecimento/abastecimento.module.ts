@@ -9,6 +9,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {RouterModule} from "@angular/router";
 import {CurrencyMaskModule} from "ng2-currency-mask";
+import {TableModule} from "primeng/table";
 
 
 
@@ -26,7 +27,8 @@ import {CurrencyMaskModule} from "ng2-currency-mask";
     InputTextModule,
     ButtonModule,
     RouterModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    TableModule
   ]
 })
 export class AbastecimentoModule { }

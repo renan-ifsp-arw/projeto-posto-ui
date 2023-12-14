@@ -40,7 +40,7 @@ export class Bomba {
 }
 
 export class Abastecimento {
-  id?: number;
+  id: number = 0;
   preco?: number;
   dataVenda?: Date = new Date();
   quantidade?: number;

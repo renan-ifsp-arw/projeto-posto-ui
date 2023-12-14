@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {AuthService} from '../security/auth.service';
-import {Cliente} from '../core/model';
+import {Bomba, Cliente} from '../core/model';
 import {DatePipe} from '@angular/common';
+import {Observable} from "rxjs";
 
 export class ClienteFilter {
   user?: any;
@@ -86,6 +87,10 @@ export class ClienteService {
 
         return updated;
       });
+  }
+
+  listClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.clienteURLUrl);
   }
 
   findById(id: number): Promise<Cliente> {
