@@ -14,15 +14,17 @@ import { Abastecimento } from 'src/app/core/model';
 export class AbastecimentoListComponent implements OnInit {
   abastecimentos: Abastecimento[] = [];
 
-  constructor(private abastecimentoService: AbastecimentoService,
-              private confirmationService: ConfirmationService,
-              private messageService: MessageService,
-              private errorHandler: ErrorHandlerService,
-              private title: Title,
-              public auth: AuthService) { }
+  constructor(
+    private abastecimentoService: AbastecimentoService,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
+    private errorHandler: ErrorHandlerService,
+    private titleService: Title,
+    public auth: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.title.setTitle('Listagem de Abastecimentos');
+    this.titleService.setTitle('Listagem de Abastecimentos');
     this.listAll();
   }
 
@@ -34,5 +36,28 @@ export class AbastecimentoListComponent implements OnInit {
       .catch(error => this.errorHandler.handle(error));
   }
 
-  // Include other necessary methods like confirmRemoval, remove, etc.
+  search(): void {
+    // Implement your search logic here, for example:
+    // this.abastecimentoService.search(this.searchFilters)
+    //   .then(data => this.abastecimentos = data)
+    //   .catch(error => this.errorHandler.handle(error));
+  }
+
+  confirmRemoval(abastecimento: Abastecimento): void {
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete this abastecimento?',
+      accept: () => {
+        this.remove(abastecimento.id);
+      }
+    });
+  }
+
+  remove(id: number): void {
+    this.abastecimentoService.remove(id)
+      .then(() => {
+        this.messageService.add({ severity: 'success', detail: 'Abastecimento deleted successfully!' });
+        this.listAll(); // Refresh the list after deletion
+      })
+      .catch(error => this.errorHandler.handle(error));
+  }
 }

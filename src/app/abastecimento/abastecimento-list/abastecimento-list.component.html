@@ -1,1 +1,76 @@
-<p>abastecimento-list works!</p>
+<div class="container">
+
+<!--  <form autocomplete="off" (ngSubmit)="search()">-->
+<!--    <div class="p-grid">-->
+<!--      <div class="p-col-12">-->
+<!--        <h1>Abastecimentos</h1>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Include any filters you need for searching abastecimentos &ndash;&gt;-->
+<!--      &lt;!&ndash; ... &ndash;&gt;-->
+
+<!--      <div class="p-col-12">-->
+<!--        <button pButton type="submit" label="Pesquisar"></button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </form>-->
+
+  <div class="p-col-12">
+    <h1>Abastecimentos</h1>
+  </div>
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-table [value]="abastecimentos" responsiveLayout="stack" [breakpoint]="'768px'">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Bomba</th>
+            <th>Cliente</th>
+            <th class="col-actions-header"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-abastecimento>
+          <tr>
+            <td>
+              <span class="p-column-title">Data</span>
+              {{ abastecimento.data | date:'dd/MM/yyyy' }}
+            </td>
+            <td>
+              <span class="p-column-title">Preço</span>
+              {{ abastecimento.preco | currency:'BRL' }}
+            </td>
+            <td>
+              <span class="p-column-title">Quantidade</span>
+              {{ abastecimento.quantidade }}
+            </td>
+            <td>
+              <span class="p-column-title">Bomba</span>
+              {{ abastecimento.bomba.nome }} <!-- Assuming there's a 'nome' property -->
+            </td>
+            <td>
+              <span class="p-column-title">Cliente</span>
+              {{ abastecimento.cliente.nome }} <!-- Assuming there's a 'nome' property -->
+            </td>
+            <td class="col-actions">
+              <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/abastecimento', abastecimento.id]"></a>
+              <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmRemoval(abastecimento)" [disabled]="!auth.hasPermission('ROLE_GERENCIA')"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+          <td colspan="6">
+            Nenhum abastecimento cadastrado.
+          </td>
+        </tr>
+      </ng-template>
+    </div>
+    <div class="p-col-12">
+      <p><a pButton label="Novo Abastecimento" routerLink="/abastecimento/new"></a></p>
+    </div>
+  </div>
+</div>

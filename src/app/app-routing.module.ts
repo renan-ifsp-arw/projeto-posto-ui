@@ -16,6 +16,11 @@ import {
   VendaConvenienciaRegisterComponent
 } from "./venda-conveniencia/venda-conveniencia-register/venda-conveniencia-register.component";
 import {OrdemCompraRegisterComponent} from "./ordem-compra/ordem-compra-register/ordem-compra-register.component";
+import {AbastecimentoListComponent} from "./abastecimento/abastecimento-list/abastecimento-list.component";
+import {
+  VendaConvenienciaListComponent
+} from "./venda-conveniencia/venda-conveniencia-list/venda-conveniencia-list.component";
+import {OrdemCompraListComponent} from "./ordem-compra/ordem-compra-list/ordem-compra-list.component";
 
 const routes: Routes = [
 
@@ -44,17 +49,24 @@ const routes: Routes = [
 
   },
 
-  {path: 'login', component: LoginFormComponent},
+  { path: 'login', component: LoginFormComponent },
   { path: 'funcionario', component: FuncionarioListComponent },
   { path: 'funcionario/new', component: FuncionarioRegisterComponent },
   { path: 'bomba', component: BombaListComponent },
   { path: 'bomba/new', component: BombaRegisterComponent },
-  {path: 'abastecimento', component: AbastecimentoRegisterComponent},
-  {path: 'venda-conveniencia', component: VendaConvenienciaRegisterComponent},
-  {path: 'ordem-compra', component: OrdemCompraRegisterComponent},
-  {path: 'page-not-found', component: PageNotFoundComponent},
-  {path: 'not-authorized', component: NotAuthorizedComponent}, // pagina-nao-encontrada
-  {path: '**', redirectTo: 'page-not-found'} // importante que seja a última rota
+
+  { path: 'abastecimento', component: AbastecimentoListComponent },
+  { path: 'abastecimento/new', component: AbastecimentoRegisterComponent },
+  { path: 'abastecimento/:id', component: AbastecimentoRegisterComponent },
+
+  { path: 'ordem-compra', component: OrdemCompraListComponent },
+  { path: 'ordem-compra/new', component: OrdemCompraRegisterComponent },
+
+  { path: 'venda-conveniencia', component: VendaConvenienciaListComponent },
+  { path: 'venda-conveniencia/new', component: VendaConvenienciaRegisterComponent },
+  { path: 'page-not-found', component: PageNotFoundComponent },
+  { path: 'not-authorized', component: NotAuthorizedComponent }, // pagina-nao-encontrada
+  { path: '**', redirectTo: 'page-not-found' } // importante que seja a última rota
 ];
 
 @NgModule({

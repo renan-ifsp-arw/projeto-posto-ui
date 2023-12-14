@@ -22,7 +22,7 @@
       <!-- Bomba ID -->
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Selecionar Bomba</label>
-        <p-dropdown name="bomba" [options]="bombas" [(ngModel)]="abastecimento.bombaId" placeholder="Select Bomba" required></p-dropdown>
+        <p-dropdown name="bomba" optionLabel="label" [options]="bombas" [(ngModel)]="abastecimento.bombaId" placeholder="Selecionar Bomba" required></p-dropdown>
         <!-- Consider adding an app-message component for validation messages if needed -->
       </div>
 
