@@ -9,6 +9,11 @@ import {BombaRegisterComponent} from './bomba/bomba-register/bomba-register.comp
 import {PageNotFoundComponent} from './core/page-not-found.component';
 import {NotAuthorizedComponent} from './core/not-authorized.component';
 import {AuthGuard} from './security/auth.guard';
+import {AbastecimentoRegisterComponent} from "./abastecimento/abastecimento-register/abastecimento-register.component";
+import {
+  VendaConvenienciaRegisterComponent
+} from "./venda-conveniencia/venda-conveniencia-register/venda-conveniencia-register.component";
+import {OrdemCompraRegisterComponent} from "./ordem-compra/ordem-compra-register/ordem-compra-register.component";
 
 const routes: Routes = [
 
@@ -40,6 +45,9 @@ const routes: Routes = [
   {path: 'login', component: LoginFormComponent},
   {path: 'funcionario', component: FuncionarioRegisterComponent},
   {path: 'bomba', component: BombaRegisterComponent},
+  {path: 'abastecimento', component: AbastecimentoRegisterComponent},
+  {path: 'venda-conveniencia', component: VendaConvenienciaRegisterComponent},
+  {path: 'ordem-compra', component: OrdemCompraRegisterComponent},
   {path: 'page-not-found', component: PageNotFoundComponent},
   {path: 'not-authorized', component: NotAuthorizedComponent}, // pagina-nao-encontrada
   {path: '**', redirectTo: 'page-not-found'} // importante que seja a última rota

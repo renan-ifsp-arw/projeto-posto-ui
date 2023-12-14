@@ -17,22 +17,24 @@ import { AbastecimentoListComponent } from './abastecimento/abastecimento-list/a
 import { AbastecimentoRegisterComponent } from './abastecimento/abastecimento-register/abastecimento-register.component';
 import { OrdemCompraRegisterComponent } from './ordem-compra/ordem-compra-register/ordem-compra-register.component';
 import { OrdemCompraListComponent } from './ordem-compra/ordem-compra-list/ordem-compra-list.component';
+import {AbastecimentoModule} from "./abastecimento/abastecimento.module";
+import {VendaConvenienciaModule} from "./venda-conveniencia/venda-conveniencia.module";
+import {OrdemCompraModule} from "./ordem-compra/ordem-compra.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VendaConvenienciaRegisterComponent,
-    VendaConvenienciaListComponent,
-    AbastecimentoListComponent,
-    AbastecimentoRegisterComponent,
-    OrdemCompraRegisterComponent,
-    OrdemCompraListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClientesModule,
+    BombaModule,
+    FuncionarioModule,
+    AbastecimentoModule,
+    VendaConvenienciaModule,
+    OrdemCompraModule,
     SecurityModule,
     HttpClientModule,
     CoreModule,

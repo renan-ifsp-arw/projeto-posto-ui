@@ -10,8 +10,6 @@ import { BombaListComponent } from './bomba-list/bomba-list.component';
 import { BombaRegisterComponent } from './bomba-register/bomba-register.component';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 
-
-
 @NgModule({
   declarations: [
     BombaListComponent,
