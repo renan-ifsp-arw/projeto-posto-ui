@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientesListComponent } from './clientes/clientes-list/clientes-list.component';
 import { LoginFormComponent } from './security/login-form/login-form.component';
 import { UserRegisterComponent } from './users/user-register/user-register.component';
+import { FuncionarioRegisterComponent } from './funcionario/funcionario-register/funcionario-register.component';
+import { BombaRegisterComponent } from './bomba/bomba-register/bomba-register.component';
 import { PageNotFoundComponent } from './core/page-not-found.component';
 import { NotAuthorizedComponent } from './core/not-authorized.component';
 import { AuthGuard } from './security/auth.guard';
@@ -33,8 +35,10 @@ const routes: Routes = [
      component: UserRegisterComponent,
      
      },
-
+  
   { path: 'login', component: LoginFormComponent },
+  { path: 'funcionario', component: FuncionarioRegisterComponent },
+  { path: 'bomba', component: BombaRegisterComponent },
   { path: 'page-not-found', component: PageNotFoundComponent },
   { path: 'not-authorized', component: NotAuthorizedComponent }, // pagina-nao-encontrada
   { path: '**', redirectTo: 'page-not-found'} // importante que seja a última rota

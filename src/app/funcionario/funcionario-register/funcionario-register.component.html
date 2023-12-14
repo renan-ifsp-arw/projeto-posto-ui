@@ -1,0 +1,36 @@
+
+<div class="container">
+  <form #f="ngForm" autocomplete="off"  (ngSubmit)="addFuncionario()">
+
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Cadastro De Funcionário</h1>
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Nome completo</label>
+        <input pInputText name="nome" type="text" [(ngModel)]="funcionario.nome" placeholder="ex: Maria José"
+         required >
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Documento</label>
+        <input pInputText name="cpf" type="text" [(ngModel)]="funcionario.cpf" placeholder="ex: 33333333333 digite 11 digitos sem postos e hífen"
+         required>
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Cargo</label>
+         <p-dropdown name="cargo" [options]="types" placeholder="Selecione" [(ngModel)]="funcionario.cargo" required>
+      </p-dropdown>
+      </div>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+    </div>
+
+  </form>
+</div>

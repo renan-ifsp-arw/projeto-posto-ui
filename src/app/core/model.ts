@@ -8,7 +8,6 @@ export class User {
   password!: string;
   active = true;
 
-
 }
 
 export class Cliente {
@@ -27,4 +26,19 @@ export class Cliente {
 
     }
   }
+}
+
+export class Funcionario {
+  id!: number;
+  nome!: string;
+  cpf!: string;
+  cargo!: string;
+}
+
+export class Bomba {
+  id!: number;
+  combustivel!: string;
+  preco!: number;
+  quantidadeAtual!: number;
+  capacidade!: number;
 }

@@ -35,7 +35,7 @@ registerLocaleData(localePt);
   ],
   providers: [
     AuthService,
-    ClienteService,
+  // ClienteService,
     ErrorHandlerService,
     MessageService,
     ConfirmationService,
