@@ -9,6 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FuncionarioRegisterComponent } from './funcionario-register/funcionario-register.component';
 import { FuncionarioListComponent } from './funcionario-list/funcionario-list.component';
 import { TableModule } from 'primeng/table';
+import { TooltipModule } from 'primeng/tooltip';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TableModule } from 'primeng/table';
     ButtonModule,
     RouterModule,
     DropdownModule,
-    TableModule 
+    TableModule,
+    TooltipModule
   ],
   exports:[
     FuncionarioRegisterComponent
