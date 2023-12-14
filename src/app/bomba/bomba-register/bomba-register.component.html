@@ -1,5 +1,6 @@
 
 <div class="container">
+  
   <form #f="ngForm" autocomplete="off"  (ngSubmit)="addBomba()">
 
     <div class="p-grid">
@@ -30,7 +31,7 @@
          <p-dropdown name="combustivel" [options]="types"placeholder="Selecione" required  [(ngModel)]="bomba.combustivel">
         </p-dropdown>
       </div>
-
+      <input type="hidden" name="bombaId" [(ngModel)]="bomba.id">
       <div class="p-col-12">
         <p>
           <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
@@ -39,4 +40,5 @@
     </div>
 
   </form>
+
 </div>

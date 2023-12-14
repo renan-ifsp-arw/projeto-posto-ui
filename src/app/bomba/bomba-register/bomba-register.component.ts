@@ -1,10 +1,12 @@
-import { Bomba } from './../../core/model';
+import { Bomba } from 'src/app/core/model';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BombaService } from './../bomba.service';
 import { MessageService } from 'primeng/api';
 import { AuthService } from 'src/app/security/auth.service';
 import { ErrorHandlerService } from './../../core/error-handler.service';
+import { ActivatedRoute } from '@angular/router';
+import { ConfirmationService, LazyLoadEvent} from 'primeng/api';
 
 
 @Component({
@@ -30,17 +32,50 @@ export class BombaRegisterComponent {
     private bombaService: BombaService,        
     private messageService: MessageService,
     private auth: AuthService,
-    private errorHandler: ErrorHandlerService
+    private errorHandler: ErrorHandlerService,
+    private route: ActivatedRoute,
+    private confirmation: ConfirmationService,
   ){}
-  
-  addBomba() {
-    this.bombaService.criarBomba(this.bomba).subscribe(
-      (resposta: any) => {
-        console.log('Bomba cadastrada com sucesso!', resposta);
-      },
-      (erro: any) => {
-        console.error('Erro ao cadastrar bomba:', erro);
-      }
-    );
+
+  ngOnInit(): void {
+    const bombaId = this.route.snapshot.params['id'];
+    if (bombaId) {
+      this.loadBomba(bombaId);
+    }
   }
+
+  loadBomba(id: number) {
+    this.bombaService.recoverBombId(id)
+      .then(bomba => {
+        this.bomba = bomba;
+      })
+      .catch(error => this.errorHandler.handle(error));
+  }
+
+  addBomba() {
+    const bombaId = this.bomba.id;
+    
+    if(bombaId != null){
+      this.bombaService.updateBomba(this.bomba)
+      .subscribe(
+        response => {
+          this.bomba = response;
+          this.messageService.add({ severity: 'success', detail: 'Bomba editada com sucesso!' });
+        },
+        error => this.errorHandler.handle(error)
+      );
+
+    }else{
+      this.bombaService.criarBomba(this.bomba).subscribe(
+        (resposta: any) => {
+          this.messageService.add({ severity: 'success', detail: 'Bomba cadastrada com sucesso!' });
+        },
+        (erro: any) => {
+          console.error('Erro ao cadastrar bomba:', erro);
+        }
+      );
+    }
+  }
+
+
 }
