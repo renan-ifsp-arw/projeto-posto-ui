@@ -70,4 +70,3 @@ export class BombaListComponent {
     return 0;
   }
 }
-
