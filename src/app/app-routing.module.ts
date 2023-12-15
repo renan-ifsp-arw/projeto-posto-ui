@@ -21,6 +21,8 @@ import {
   VendaConvenienciaListComponent
 } from "./venda-conveniencia/venda-conveniencia-list/venda-conveniencia-list.component";
 import {OrdemCompraListComponent} from "./ordem-compra/ordem-compra-list/ordem-compra-list.component";
+import {FornecedorListComponent} from "./fornecedor/fornecedor-list/fornecedor-list.component";
+import {FornecedorRegisterComponent} from "./fornecedor/fornecedor-register/fornecedor-register.component";
 
 const routes: Routes = [
 
@@ -69,9 +71,9 @@ const routes: Routes = [
   { path: 'venda-conveniencia/new', component: VendaConvenienciaRegisterComponent },
   { path: 'venda-conveniencia/:id', component: VendaConvenienciaRegisterComponent },
 
-/*  { path: 'fornecededores', component: VendaConvenienciaListComponent },
-  { path: 'fornecededores/new', component: VendaConvenienciaRegisterComponent },
-  { path: 'fornecededores/:id', component: VendaConvenienciaRegisterComponent },*/
+  { path: 'fornecedor', component: FornecedorListComponent },
+  { path: 'fornecedor/new', component: FornecedorRegisterComponent },
+  { path: 'fornecedor/:id', component: FornecedorRegisterComponent },
 
   { path: 'page-not-found', component: PageNotFoundComponent },
   { path: 'not-authorized', component: NotAuthorizedComponent }, // pagina-nao-encontrada

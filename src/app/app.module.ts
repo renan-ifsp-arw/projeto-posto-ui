@@ -20,6 +20,9 @@ import { OrdemCompraListComponent } from './ordem-compra/ordem-compra-list/ordem
 import {AbastecimentoModule} from "./abastecimento/abastecimento.module";
 import {VendaConvenienciaModule} from "./venda-conveniencia/venda-conveniencia.module";
 import {OrdemCompraModule} from "./ordem-compra/ordem-compra.module";
+import { FornecedorRegisterComponent } from './fornecedor/fornecedor-register/fornecedor-register.component';
+import { FornecedorListComponent } from './fornecedor/fornecedor-list/fornecedor-list.component';
+import {FornecedorModule} from "./fornecedor/fornecedor.module";
 
 
 @NgModule({
@@ -35,6 +38,7 @@ import {OrdemCompraModule} from "./ordem-compra/ordem-compra.module";
     AbastecimentoModule,
     VendaConvenienciaModule,
     OrdemCompraModule,
+    FornecedorModule,
     SecurityModule,
     HttpClientModule,
     CoreModule,

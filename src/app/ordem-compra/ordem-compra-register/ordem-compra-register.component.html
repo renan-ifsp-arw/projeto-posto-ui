@@ -8,7 +8,8 @@
       <!-- Valor Total -->
       <div class="p-col-12 p-md-6 mb-2">
         <label>Valor Total</label>
-        <input pInputText name="valorTotal" type="text" [(ngModel)]="ordemCompra.valorTotal" required currencyMask [options]="{prefix: '', thousands: '.', decimal: ','}">
+        <input pInputText name="valorTotal" type="text"
+             [(ngModel)]="ordemCompra.valorTotal" required currencyMask [options]="{prefix: '', thousands: '.', decimal: ','}">
       </div>
 
       <!-- Produto -->

@@ -59,11 +59,12 @@ export class VendaConveniencia {
 }
 
 export class Fornecedor {
-  id!: number;
-  nome!: string;
-  cnpj!: string;
-  ativo: boolean = true
+  id: number = 0;
+  nome?: string;
+  cnpj?: string;
+  ativo: boolean = true;
 }
+
 
 export class OrdemCompra {
   id: number = 0;

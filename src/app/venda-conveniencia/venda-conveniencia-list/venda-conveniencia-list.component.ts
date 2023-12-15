@@ -36,5 +36,22 @@ export class VendaConvenienciaListComponent implements OnInit {
       .catch(error => this.errorHandler.handle(error));
   }
 
-  // Include methods for search, confirmRemoval, and remove similar to AbastecimentoListComponent
+  confirmRemoval(vendaConveniencia: VendaConveniencia): void {
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete this abastecimento?',
+      accept: () => {
+        this.remove(vendaConveniencia.id);
+      }
+    });
+  }
+
+  remove(id: number): void {
+    this.vendaConvenienciaService.remove(id)
+      .then(() => {
+        this.messageService.add({ severity: 'success', detail: 'Venda Conveniencia deleted successfully!' });
+        this.listAll();
+      })
+      .catch(error => this.errorHandler.handle(error));
+  }
+
 }

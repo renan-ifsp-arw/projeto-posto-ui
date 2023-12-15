@@ -35,7 +35,7 @@
             </td>
             <td class="col-actions">
               <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/venda-conveniencia', venda.id]"></a>
-              <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmRemoval(venda)" [disabled]="!auth.hasPermission('ROLE_REMOVE_ACTIVITY')"></button>
+                <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmRemoval(venda)" [disabled]="!auth.hasPermission('ROLE_GERENCIA')"></button>
             </td>
           </tr>
         </ng-template>
