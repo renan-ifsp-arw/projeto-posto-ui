@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OrdemCompra, Fornecedor, TipoOrdem } from '../../core/model';
-//import { FornecedorService } from '../../fornecedor/fornecedor.service'; // Update path as needed
+import { FornecedorService } from '../../fornecedor/fornecedor.service';
 import { OrdemCompraService } from '../ordem-compra.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
@@ -19,7 +19,7 @@ export class OrdemCompraRegisterComponent {
     private messageService: MessageService,
     private route: ActivatedRoute,
     private router: Router,
-    //private fornecedorService: FornecedorService,
+    private fornecedorService: FornecedorService,
     private ordemCompraService: OrdemCompraService
   ) { }
 
@@ -49,7 +49,7 @@ export class OrdemCompraRegisterComponent {
   }
 
   private loadFornecedores() {
-    //this.fornecedorService.listFornecedores() // Implement this method in FornecedorService
-    //  .subscribe(fornecedores => this.fornecedores = fornecedores);
+    this.fornecedorService.listAll()
+      .then(fornecedores => this.fornecedores = fornecedores);
   }
 }

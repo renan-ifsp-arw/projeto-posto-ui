@@ -12,6 +12,7 @@
             <th>Preco</th>
             <th>QuantidadeAtual</th>
             <th>Capacidade</th>
+            <th>Status</th>
             <th class="col-actions-header"></th>
           </tr>
         </ng-template>
@@ -22,7 +23,7 @@
               {{ bomba?.combustivel }}
             </td>
             <td>
-              <span class="p-column-title">Preco</span>
+              <span class="p-column-title">Preço</span>
               {{ bomba?.preco }}
             </td>
             <td>
@@ -34,8 +35,8 @@
               {{ bomba?.capacidade }}
             </td>
             <td>
-              <span class="p-column-title">Quantidade Atual</span>
-              <i class="pi pi-gas-station"></i> <!-- Exemplo de ícone de bomba -->
+              <span class="p-column-title">Status </span>
+              <i class="pi pi-car"></i>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" [style.width]="calculateFillPercentage(bomba) + '%'"></div>
               </div>
