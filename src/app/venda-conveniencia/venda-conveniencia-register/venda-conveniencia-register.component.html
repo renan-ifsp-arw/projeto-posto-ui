@@ -1,1 +1,40 @@
-<p>venda-conveniencia-register works!</p>
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="saveVendaConveniencia()">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Cadastro de Venda Conveniência</h1>
+      </div>
+
+      <!-- Valor Total -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Valor Total</label>
+        <input pInputText name="valorTotal" type="text" [(ngModel)]="vendaConveniencia.valorTotal"
+               required currencyMask [options]="{prefix: '', thousands: '.' , decimal:',' , allowNegative: false}">
+      </div>
+
+      <!-- Produto -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Produto</label>
+        <input pInputText name="produto" type="text" [(ngModel)]="vendaConveniencia.produto" #produto="ngModel" required>
+      </div>
+
+      <!-- Descrição -->
+      <div class="p-col-12 mb-2">
+        <label>Descrição</label>
+        <input pInputText name="descricao" type="text" [(ngModel)]="vendaConveniencia.descricao">
+      </div>
+
+      <!-- Cliente ID -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Selecionar Cliente</label>
+        <p-dropdown name="cliente" optionLabel="nome" [options]="clientes" [(ngModel)]="vendaConveniencia.cliente" placeholder="Selecionar Cliente" required></p-dropdown>
+      </div>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

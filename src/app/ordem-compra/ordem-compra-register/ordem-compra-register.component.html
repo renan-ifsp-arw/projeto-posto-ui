@@ -1,1 +1,45 @@
-<p>ordem-compra-register works!</p>
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="saveOrdemCompra()">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Cadastro de Ordem de Compra</h1>
+      </div>
+
+      <!-- Valor Total -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Valor Total</label>
+        <input pInputText name="valorTotal" type="text" [(ngModel)]="ordemCompra.valorTotal" required currencyMask [options]="{prefix: '', thousands: '.', decimal: ','}">
+      </div>
+
+      <!-- Produto -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Produto</label>
+        <input pInputText name="produto" type="text" [(ngModel)]="ordemCompra.produto" required>
+      </div>
+
+      <!-- Descrição -->
+      <div class="p-col-12 mb-2">
+        <label>Descrição</label>
+        <input pInputText name="descricao" type="text" [(ngModel)]="ordemCompra.descricao">
+      </div>
+
+      <!-- Fornecedor ID -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Selecionar Fornecedor</label>
+        <p-dropdown name="fornecedor" optionLabel="nome" [options]="fornecedores" [(ngModel)]="ordemCompra.fornecedor" required></p-dropdown>
+      </div>
+
+      <!-- Tipo de Ordem -->
+      <div class="p-col-12 p-md-6 mb-2">
+        <label>Tipo de Ordem</label>
+        <p-dropdown name="tipo" [options]="tiposOrdem" [(ngModel)]="ordemCompra.tipo" required></p-dropdown>
+      </div>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

@@ -61,9 +61,16 @@ const routes: Routes = [
 
   { path: 'ordem-compra', component: OrdemCompraListComponent },
   { path: 'ordem-compra/new', component: OrdemCompraRegisterComponent },
+  { path: 'ordem-compra/:id', component: OrdemCompraRegisterComponent },
 
   { path: 'venda-conveniencia', component: VendaConvenienciaListComponent },
   { path: 'venda-conveniencia/new', component: VendaConvenienciaRegisterComponent },
+  { path: 'venda-conveniencia/:id', component: VendaConvenienciaRegisterComponent },
+
+/*  { path: 'fornecededores', component: VendaConvenienciaListComponent },
+  { path: 'fornecededores/new', component: VendaConvenienciaRegisterComponent },
+  { path: 'fornecededores/:id', component: VendaConvenienciaRegisterComponent },*/
+
   { path: 'page-not-found', component: PageNotFoundComponent },
   { path: 'not-authorized', component: NotAuthorizedComponent }, // pagina-nao-encontrada
   { path: '**', redirectTo: 'page-not-found' } // importante que seja a última rota

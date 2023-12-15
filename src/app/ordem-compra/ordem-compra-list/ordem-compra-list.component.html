@@ -1,1 +1,60 @@
-<p>ordem-compra-list works!</p>
+<div class="container">
+  <div class="p-col-12">
+    <h1>Ordens de Compra</h1>
+  </div>
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-table [value]="ordensCompra" responsiveLayout="stack" [breakpoint]="'768px'">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Data</th>
+            <th>Valor Total</th>
+            <th>Produto</th>
+            <th>Fornecedor</th>
+            <th>Tipo</th>
+            <th class="col-actions-header"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-ordem>
+          <tr>
+            <td>
+              <span class="p-column-title">Data</span>
+              {{ ordem.dataCompra | date:'dd/MM/yyyy' }}
+            </td>
+            <td>
+              <span class="p-column-title">Valor Total</span>
+              {{ ordem.valorTotal | currency:'BRL' }}
+            </td>
+            <td>
+              <span class="p-column-title">Produto</span>
+              {{ ordem.produto }}
+            </td>
+            <td>
+              <span class="p-column-title">Fornecedor</span>
+              {{ ordem.fornecedor.nome }}
+            </td>
+            <td>
+              <span class="p-column-title">Tipo</span>
+              {{ ordem.tipo }}
+            </td>
+            <td class="col-actions">
+              <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/ordem-compra', ordem.id]"></a>
+              <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmRemoval(ordem)" [disabled]="!auth.hasPermission('ROLE_REMOVE_ACTIVITY')"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+          <td colspan="6">
+            Nenhuma ordem de compra cadastrada.
+          </td>
+        </tr>
+      </ng-template>
+    </div>
+    <div class="p-col-12">
+      <p><a pButton label="Nova Ordem de Compra" routerLink="/ordem-compra/new"></a></p>
+    </div>
+  </div>
+</div>

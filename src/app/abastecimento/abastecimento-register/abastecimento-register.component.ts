@@ -4,6 +4,7 @@ import {BombaService} from "../../bomba/bomba.service";
 import {ClienteService} from "../../cliente/cliente.service";
 import {AbastecimentoService} from "../abastecimento.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-abastecimento-register',
@@ -17,6 +18,7 @@ export class AbastecimentoRegisterComponent {
   clientes: Cliente[] = []; // Initialize with the appropriate data
 
   constructor(
+    private messageService: MessageService,
     private route: ActivatedRoute,
     private router: Router,
     private bombaService: BombaService,
@@ -39,22 +41,22 @@ export class AbastecimentoRegisterComponent {
   }
 
   saveAbastecimento() {
-    if (this.abastecimento.id) {
-      this.abastecimentoService.update(this.abastecimento)
-        .then(
-          // success handling
-          () => this.router.navigate(['/abastecimento']),
-          // error handling
-        );
-    } else {
-      this.abastecimentoService.addAbastecimento(this.abastecimento)
-        .then(
-          // success handling
-          () => this.router.navigate(['/abastecimento']),
-          // error handling
-        );
-    }
+    const operationPromise = this.abastecimento.id
+      ? this.abastecimentoService.update(this.abastecimento)
+      : this.abastecimentoService.addAbastecimento(this.abastecimento);
+
+    operationPromise.then(
+      () => {
+        this.router.navigate(['/abastecimento']);
+        this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Abastecimento salvo com sucesso!' });
+      },
+      error => {
+        console.error('Error saving abastecimento:', error);
+        this.messageService.add({ severity: 'error', summary: 'Erro', detail: error.error.message });
+      }
+    );
   }
+
 
 
   private loadClientes() {

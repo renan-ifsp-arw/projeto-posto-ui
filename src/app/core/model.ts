@@ -48,3 +48,37 @@ export class Abastecimento {
   cliente?: Cliente;
 }
 
+export class VendaConveniencia {
+  id: number = 0;
+  valorTotal?: number;
+  dataVenda?: Date = new Date();
+  cliente?: Cliente;
+  produto?: string;
+  descricao?: string;
+  ativo: boolean = true;
+}
+
+export class Fornecedor {
+  id!: number;
+  nome!: string;
+  cnpj!: string;
+  ativo: boolean = true
+}
+
+export class OrdemCompra {
+  id: number = 0;
+  dataCompra?: Date = new Date();
+  valorTotal?: number;
+  fornecedor?: Fornecedor;
+  produto?: string;
+  descricao?: string;
+  tipo?: TipoOrdem;
+  ativo: boolean = true;
+}
+
+export enum TipoOrdem {
+  COMBUSTIVEL = 'COMBUSTIVEL',
+  CONVENIENCIA = 'CONVENIENCIA'
+}
+
+
