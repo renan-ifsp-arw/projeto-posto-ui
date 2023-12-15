@@ -1,20 +1,4 @@
 <div class="container">
-
-<!--  <form autocomplete="off" (ngSubmit)="search()">-->
-<!--    <div class="p-grid">-->
-<!--      <div class="p-col-12">-->
-<!--        <h1>Abastecimentos</h1>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash; Include any filters you need for searching abastecimentos &ndash;&gt;-->
-<!--      &lt;!&ndash; ... &ndash;&gt;-->
-
-<!--      <div class="p-col-12">-->
-<!--        <button pButton type="submit" label="Pesquisar"></button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </form>-->
-
   <div class="p-col-12">
     <h1>Abastecimentos</h1>
   </div>
@@ -48,11 +32,11 @@
             </td>
             <td>
               <span class="p-column-title">Bomba</span>
-              {{ abastecimento.bomba.combustivel }} <!-- Assuming there's a 'nome' property -->
+              {{ abastecimento.bomba.combustivel }}
             </td>
             <td>
               <span class="p-column-title">Cliente</span>
-              {{ abastecimento.cliente.nome }} <!-- Assuming there's a 'nome' property -->
+              {{ abastecimento.cliente.nome }}
             </td>
             <td class="col-actions">
               <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/abastecimento', abastecimento.id]"></a>

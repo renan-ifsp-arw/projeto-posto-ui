@@ -1,5 +1,5 @@
 <div class="container">
-  <form #f="ngForm" autocomplete="off" (ngSubmit)="addAbastecimento()">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="saveAbastecimento()">
     <div class="p-grid">
       <div class="p-col-12">
         <h1>Cadastro de Abastecimento</h1>
@@ -30,7 +30,6 @@
       <div class="p-col-12 p-md-9 w-3 mb-2">
         <label>Selecionar Cliente</label>
         <p-dropdown name="cliente" optionLabel="nome" [options]="clientes" [(ngModel)]="abastecimento.cliente" placeholder="Selecionar Cliente" required></p-dropdown>
-        <!-- Consider adding an app-message component for validation messages if needed -->
       </div>
 
       <div class="p-col-12">
