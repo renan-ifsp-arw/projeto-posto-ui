@@ -24,7 +24,7 @@
          <p-dropdown name="cargo" [options]="types" placeholder="Selecione" [(ngModel)]="funcionario.cargo" required>
       </p-dropdown>
       </div>
-
+      <input type="hidden" name="funcionarioId" [(ngModel)]="funcionario.id">
       <div class="p-col-12">
         <p>
           <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
