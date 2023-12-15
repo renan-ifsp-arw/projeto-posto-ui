@@ -6,30 +6,30 @@
       </div>
 
       <!-- Preço -->
-      <div class="p-col-12 p-md-9 p-fluid">
+      <div class="p-col-12 p-md-9 w-2 mb-2">
         <label>Preço</label>
         <input pInputText name="preco" type="text" [(ngModel)]="abastecimento.preco" #preco="ngModel" required
         required currencyMask [options]="{prefix: '', thousands: '.' , decimal:',' , allowNegative: false}">
       </div>
 
       <!-- Quantidade -->
-      <div class="p-col-12 p-md-9 p-fluid">
+      <div class="p-col-12 p-md-9 w-2 mb-2">
         <label>Quantidade</label>
         <input pInputText name="quantidade" type="text" [(ngModel)]="abastecimento.quantidade" #quantidade="ngModel" required
         required currencyMask [options]="{prefix: '', thousands: '.' , decimal:',' , allowNegative: false}">
       </div>
 
       <!-- Bomba ID -->
-      <div class="p-col-12 p-md-9 p-fluid">
+      <div class="p-col-12 p-md-9 w-3 mb-2">
         <label>Selecionar Bomba</label>
-        <p-dropdown name="bomba" optionLabel="label" [options]="bombas" [(ngModel)]="abastecimento.bombaId" placeholder="Selecionar Bomba" required></p-dropdown>
+        <p-dropdown name="bomba" optionLabel="label" [options]="bombas" [(ngModel)]="abastecimento.bomba" placeholder="Selecionar Bomba" required></p-dropdown>
         <!-- Consider adding an app-message component for validation messages if needed -->
       </div>
 
       <!-- Cliente ID -->
-      <div class="p-col-12 p-md-9 p-fluid">
+      <div class="p-col-12 p-md-9 w-3 mb-2">
         <label>Selecionar Cliente</label>
-        <p-dropdown name="cliente" [options]="clientes" [(ngModel)]="abastecimento.clienteId" placeholder="Select Cliente" required></p-dropdown>
+        <p-dropdown name="cliente" optionLabel="nome" [options]="clientes" [(ngModel)]="abastecimento.cliente" placeholder="Selecionar Cliente" required></p-dropdown>
         <!-- Consider adding an app-message component for validation messages if needed -->
       </div>
 

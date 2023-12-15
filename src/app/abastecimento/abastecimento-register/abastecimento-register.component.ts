@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Abastecimento, Bomba, Cliente} from "../../core/model";
 import {BombaService} from "../../bomba/bomba.service";
 import {ClienteService} from "../../cliente/cliente.service";
+import {AbastecimentoService} from "../abastecimento.service";
 
 @Component({
   selector: 'app-abastecimento-register',
@@ -16,7 +17,8 @@ export class AbastecimentoRegisterComponent {
 
   constructor(
     private bombaService: BombaService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private abastecimentoService: AbastecimentoService
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,7 @@ export class AbastecimentoRegisterComponent {
   }
 
   addAbastecimento() {
-    console.log(this.abastecimento);
+    this.abastecimentoService.addAbastecimento(this.abastecimento)
   }
 
   loadBombas(): void {

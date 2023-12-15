@@ -98,9 +98,6 @@ export class ClienteService {
       .toPromise()
       .then((response: any) => {
         const cliente = response;
-
-        //this.stringToDate(cliente);
-
         return cliente;
       });
   }

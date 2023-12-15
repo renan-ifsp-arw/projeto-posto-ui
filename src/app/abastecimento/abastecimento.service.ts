@@ -19,7 +19,7 @@ export class AbastecimentoService {
       .then(response => response || []);
   }
 
-  add(abastecimento: Abastecimento): Promise<Abastecimento> {
+  addAbastecimento(abastecimento: Abastecimento): Promise<Abastecimento> {
     const headers = new HttpHeaders().append('Content-Type', 'application/json');
     return this.http.post<Abastecimento>(this.abastecimentoUrl, abastecimento, { headers })
       .toPromise()
