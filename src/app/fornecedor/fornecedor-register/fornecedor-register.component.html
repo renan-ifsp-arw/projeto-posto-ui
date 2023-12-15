@@ -1,0 +1,27 @@
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="saveFornecedor()">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Cadastro de Fornecedor</h1>
+      </div>
+
+      <!-- Nome -->
+      <div class="p-col-12 mb-2">
+        <label>Nome</label>
+        <input pInputText name="nome" type="text" [(ngModel)]="fornecedor.nome" required>
+      </div>
+
+      <!-- CNPJ -->
+      <div class="p-col-12 mb-2">
+        <label>CNPJ</label>
+        <input pInputText name="cnpj" type="text" [(ngModel)]="fornecedor.cnpj" required>
+      </div>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
