@@ -36,7 +36,7 @@
           <tr>
             <td>
               <span class="p-column-title">Data</span>
-              {{ abastecimento.data | date:'dd/MM/yyyy' }}
+              {{ abastecimento.dataVenda | date:'dd/MM/yyyy' }}
             </td>
             <td>
               <span class="p-column-title">Preço</span>
@@ -48,7 +48,7 @@
             </td>
             <td>
               <span class="p-column-title">Bomba</span>
-              {{ abastecimento.bomba.nome }} <!-- Assuming there's a 'nome' property -->
+              {{ abastecimento.bomba.combustivel }} <!-- Assuming there's a 'nome' property -->
             </td>
             <td>
               <span class="p-column-title">Cliente</span>
