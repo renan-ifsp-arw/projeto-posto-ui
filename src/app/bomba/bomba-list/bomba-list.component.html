@@ -33,6 +33,14 @@
               <span class="p-column-title">Capacidade</span>
               {{ bomba?.capacidade }}
             </td>
+            <td>
+              <span class="p-column-title">Quantidade Atual</span>
+              <i class="pi pi-gas-station"></i> <!-- Exemplo de ícone de bomba -->
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" [style.width]="calculateFillPercentage(bomba) + '%'"></div>
+              </div>
+              {{ calculateFillPercentage(bomba) }}%
+            </td>
             <td class="col-actions">
               <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/bomba', bomba?.id]"></a>
               <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmRemoval(bomba)" [disabled]="!auth.hasPermission('ROLE_GERENCIA')"></button>

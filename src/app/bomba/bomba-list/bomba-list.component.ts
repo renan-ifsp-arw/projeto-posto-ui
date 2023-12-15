@@ -44,4 +44,11 @@ export class BombaListComponent {
       }
     );
   }
+
+  calculateFillPercentage(bomba: Bomba): number {
+    if (bomba.capacidade && bomba.quantidadeAtual) {
+      return Math.ceil(((bomba.capacidade - bomba.quantidadeAtual) / bomba.capacidade) * 100);
+    }
+    return 0;
+  }
 }
